@@ -1,0 +1,42 @@
+{
+  "name": "devenv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify main.js -t babelify -o dist/bundle.js",
+    "watch": "watchify --debug main.js -t babelify -o 'exorcist bundle.map.js > bundle.js' -v",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "browserify-middleware": "^7.1.0",
+    "chalk": "^1.1.3",
+    "eslint": "^4.1.0",
+    "eslint-plugin-react": "^7.1.0",
+    "exorcist": "^0.4.0",
+    "node-sass-middleware": "^0.11.0",
+    "open": "^0.0.5",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "transform": [
+    [
+      "babelify",
+      {
+        "comments": false
+      }
+    ]
+  ]
+}
