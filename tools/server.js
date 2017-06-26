@@ -12,18 +12,18 @@ browserifyMiddleware.settings({
 });
 
 const sassConfig = {
-  src: __dirname + '/scss',
-  dest: __dirname + '/dist',
+  src: path.join(__dirname, '../scss'),
+  dest: path.join(__dirname, '../dist'),
   debug: true
 };
 
 app.use(sassMiddleware(sassConfig));
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, '../dist')));
 
-app.get('/bundle.js', browserifyMiddleware(path.join(__dirname, 'main.js'))); 
+app.get('/bundle.js', browserifyMiddleware(path.join(__dirname, '../src/js/main.js'))); 
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 

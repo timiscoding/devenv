@@ -4,10 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "browserify main.js -t babelify -o dist/bundle.js",
+    "build": "browserify src/js/main.js -t babelify -o dist/bundle.js",
     "watch": "watchify --debug main.js -t babelify -o 'exorcist bundle.map.js > bundle.js' -v",
+    "open:src": "babel-node tools/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-node server.js"
+    "start": "run-p lint:watch open:src",
+    "lint": "esw src",
+    "lint:watch": "yarn run lint -- --watch"
   },
   "author": "",
   "license": "ISC",
@@ -21,10 +24,12 @@
     "chalk": "^1.1.3",
     "eslint": "^4.1.0",
     "eslint-plugin-react": "^7.1.0",
+    "eslint-watch": "^3.1.2",
     "exorcist": "^0.4.0",
     "node-sass-middleware": "^0.11.0",
     "open": "^0.0.5",
-    "watchify": "^3.9.0"
+    "watchify": "^3.9.0",
+    "yarn-run-all": "^3.1.1"
   },
   "dependencies": {
     "express": "^4.15.3",
