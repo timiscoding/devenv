@@ -12,7 +12,7 @@ browserifyMiddleware.settings({
 });
 
 const sassConfig = {
-  src: path.join(__dirname, '../scss'),
+  src: path.join(__dirname, '../src/scss'),
   dest: path.join(__dirname, '../dist'),
   debug: true
 };
@@ -20,7 +20,7 @@ const sassConfig = {
 app.use(sassMiddleware(sassConfig));
 app.use(express.static(path.join(__dirname, '../dist')));
 
-app.get('/bundle.js', browserifyMiddleware(path.join(__dirname, '../src/js/main.js'))); 
+app.get('/bundle.js', browserifyMiddleware(path.join(__dirname, '../src/js/main.js')));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../index.html'));
