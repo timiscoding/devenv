@@ -10,7 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "run-p lint:watch open:src",
     "lint": "esw src",
-    "lint:watch": "yarn run lint -- --watch"
+    "lint:watch": "yarn run lint -- --watch",
+    "lint:sass": "stylelint src/**/*.scss"
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +29,8 @@
     "exorcist": "^0.4.0",
     "node-sass-middleware": "^0.11.0",
     "open": "^0.0.5",
+    "stylelint": "^7.11.1",
+    "stylelint-config-sass-guidelines": "^2.1.0",
     "watchify": "^3.9.0",
     "yarn-run-all": "^3.1.1"
   },
