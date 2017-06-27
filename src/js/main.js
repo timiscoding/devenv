@@ -1,12 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-const Hi = () => {
+const Main = () => {
   return (
     <div>
-      Hi there boy!   
+      Hi there boy!
     </div>
   );
 };
 
-ReactDOM.render(<Hi />, document.getElementById('root'));
+export default Main;
+
